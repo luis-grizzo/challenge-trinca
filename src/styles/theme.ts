@@ -11,7 +11,7 @@ export const theme = {
     text: '#616161',
     textHover: transparentize(0.3, '#616161'),
     shape: '#ffffff',
-    background: '#fafafa',
+    background: '#fafafa'
   },
   transitions: {
     default: 'all 300ms ease'

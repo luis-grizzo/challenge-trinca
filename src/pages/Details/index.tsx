@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 const Details = (): React.ReactElement => {
-  return(
+  return (
     <S.Wrapper>
       <h1>Deatils</h1>
     </S.Wrapper>

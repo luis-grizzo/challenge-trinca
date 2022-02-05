@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
 
 import Routes from './routes'
 import GlobalStyles from './styles/global'
@@ -17,4 +17,4 @@ ReactDOM.render(
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)

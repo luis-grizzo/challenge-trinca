@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
-import { ButtonProps } from ".";
+import { ButtonProps } from '.'
 
 type StyledButtonProps = Pick<ButtonProps, 'fullWidth'>
 
@@ -11,7 +11,7 @@ const modifiers = {
 }
 
 export const Button = styled.button<StyledButtonProps>`
-  ${({theme, fullWidth}) => css`
+  ${({ theme, fullWidth }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@ export const Button = styled.button<StyledButtonProps>`
     border-radius: 1.8rem;
 
     background-color: ${theme.colors.black};
-    
+
     font-size: 1.8rem;
     font-weight: 700;
     color: ${theme.colors.white};
