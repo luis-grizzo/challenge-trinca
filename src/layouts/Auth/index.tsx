@@ -4,12 +4,7 @@ import * as S from './styles'
 
 import trincalogo from '../../assets/trincalogo.svg'
 
-type AuthLayoutProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLElement>,
-  HTMLElement
->
-
-const AuthLayout = ({ ...props }: AuthLayoutProps): React.ReactElement => {
+const AuthLayout = (): React.ReactElement => {
   return (
     <S.Body>
       <div className="b__header">

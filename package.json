@@ -35,7 +35,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test:staged": "react-scripts test --findRelatedTests --bail",
+    "test:ci": "react-scripts test --watchAll=false --coverage",
+    "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --max-warnings=0",
     "prepare": "husky install"

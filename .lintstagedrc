@@ -1,5 +1,5 @@
 {
-  "src/*/.ts(x)?": [
-    "yarn lint --fix",
+  "src/**/*.ts(x)?": [
+    "yarn lint --fix"
   ]
 }

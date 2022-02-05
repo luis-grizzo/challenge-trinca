@@ -4,14 +4,7 @@ import * as S from './styles'
 
 import trincalogo from '../../assets/trincalogo.svg'
 
-type DefaultLayoutProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLElement>,
-  HTMLElement
->
-
-const DefaultLayout = ({
-  ...props
-}: DefaultLayoutProps): React.ReactElement => {
+const DefaultLayout = (): React.ReactElement => {
   return (
     <S.Body>
       <div className="b__header">
