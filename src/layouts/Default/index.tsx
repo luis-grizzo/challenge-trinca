@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
 
-import * as S from './styles'
+import trincalogo from 'assets/trincalogo.svg'
 
-import trincalogo from '../../assets/trincalogo.svg'
+import * as S from './styles'
 
 const DefaultLayout = (): React.ReactElement => {
   return (

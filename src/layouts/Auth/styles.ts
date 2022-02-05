@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import bbqpattern from '../../assets/bbqpattern.svg'
+import bbqpattern from 'assets/bbqpattern.svg'
 
 export const Body = styled.main`
   ${({ theme }) => css`

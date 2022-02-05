@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../../utils/render-with-theme'
+import { renderWithTheme } from 'utils/render-with-theme'
 
 import Button from '..'
 

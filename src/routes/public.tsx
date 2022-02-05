@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react'
 import type { RouteObject } from 'react-router-dom'
 
-const AuthLayout = lazy(async () => await import('../layouts/Auth'))
+const AuthLayout = lazy(async () => await import('layouts/Auth'))
 
-const Login = lazy(async () => await import('../pages/Login'))
+const Login = lazy(async () => await import('pages/Login'))
 
 export const publicRoutes: RouteObject[] = [
   {
