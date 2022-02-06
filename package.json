@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test:staged": "react-scripts test --findRelatedTests --bail",
     "test:ci": "react-scripts test --watchAll=false --coverage",
     "test:watch": "react-scripts test",
