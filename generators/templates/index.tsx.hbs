@@ -1,7 +1,11 @@
 import * as S from './styles'
 
 const {{pascalCase name}} = (): React.ReactElement => {
-  return <p>{{lowerCase name}}</p>
+  return (
+    <S.{{pascalCase name}}>
+      {{lowerCase name}}
+    </S.{{pascalCase name}}>
+  )
 }
 
 export default {{pascalCase name}}
