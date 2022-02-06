@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkchallenge_trinca=self.webpackChunkchallenge_trinca||[]).push([[670],{222:function(a,c,e){e(791);c.Z=e.p+"static/media/bbqpattern.8377c84f1c3616d704e9b14ae3f6a826.svg"},688:function(a,c,e){e(791);c.Z=e.p+"static/media/trincalogo.eca4385926c9ffbad86e357b93360c5a.svg"}}]);
-//# sourceMappingURL=670.b530f648.chunk.js.map

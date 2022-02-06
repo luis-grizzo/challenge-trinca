@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchallenge_trinca=self.webpackChunkchallenge_trinca||[]).push([[824],{824:function(n,e,c){c.r(e),c.d(e,{default:function(){return l}});var r,t=c(766),u=c(781).ZP.div(r||(r=(0,t.Z)([""]))),i=c(417),l=function(){return(0,i.jsx)(u,{children:(0,i.jsx)("h1",{children:"Home"})})}}}]);
