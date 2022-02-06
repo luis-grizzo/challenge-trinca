@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkchallenge_trinca=self.webpackChunkchallenge_trinca||[]).push([[481],{481:function(n,e,c){c.r(e),c.d(e,{default:function(){return l}});var r,t=c(168),u=c(751).ZP.div(r||(r=(0,t.Z)([""]))),i=c(184),l=function(){return(0,i.jsx)(u,{children:(0,i.jsx)("h1",{children:"Home"})})}}}]);
+//# sourceMappingURL=481.fc4bc7e7.chunk.js.map
