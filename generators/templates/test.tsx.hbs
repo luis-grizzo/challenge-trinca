@@ -1,9 +1,9 @@
 import { renderWithTheme } from 'utils/render-with-theme'
 
-import {{pascalCase name}} from 'components/{{lowerCase path}}/{{pascalCase name}}'
+import {{pascalCase name}} from '..'
 
 describe('<{{pascalCase name}} />', () => {
-  it('', () => {
-    expect(1).toBe(1)
+  it('render {{pascalCase name}}', () => {
+    renderWithTheme(<{{pascalCase name}} />)
   })
 })
