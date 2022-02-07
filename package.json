@@ -1,6 +1,8 @@
 {
   "name": "challenge-trinca",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "private": true,
+  "homepage": "https://luis-grizzo.github.io/challenge-trinca/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
@@ -9,9 +11,9 @@
     "date-fns": "^2.28.0",
     "polished": "^4.1.4",
     "react": "^17.0.2",
-    "react-datepicker": "^4.6.0",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "react-multi-date-picker": "^3.3.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-spring": "^9.4.2",
@@ -39,7 +41,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "react-scripts build",
     "test:staged": "react-scripts test --findRelatedTests --bail",
     "test:ci": "react-scripts test --watchAll=false --coverage",
     "test:watch": "react-scripts test",
@@ -65,6 +67,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://luis-grizzo.github.io/challenge-trinca/"
+  }
 }
