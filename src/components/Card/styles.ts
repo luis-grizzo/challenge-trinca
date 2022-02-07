@@ -52,7 +52,6 @@ const modifiers = {
     gap: 0.8rem;
 
     background-color: ${theme.colors.darkShape};
-    cursor: pointer;
 
     .c__image-wrapper {
       display: flex;
@@ -78,6 +77,7 @@ export const Card = styled.div<StyledCardProps>`
     padding: 2rem 2.5rem;
     border-radius: 0.2rem;
     box-shadow: ${theme.shadows.default};
+    cursor: pointer;
 
     ${modifiers[mode](theme)}
   `}
