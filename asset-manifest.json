@@ -1,17 +1,29 @@
 {
   "files": {
-    "main.js": "/challenge-trinca/static/js/main.3ad9ac77.js",
-    "static/js/4.75cb9b56.chunk.js": "/challenge-trinca/static/js/4.75cb9b56.chunk.js",
-    "static/js/824.ad13ad29.chunk.js": "/challenge-trinca/static/js/824.ad13ad29.chunk.js",
-    "static/js/455.0a3f231b.chunk.js": "/challenge-trinca/static/js/455.0a3f231b.chunk.js",
-    "static/js/113.d632ab1d.chunk.js": "/challenge-trinca/static/js/113.d632ab1d.chunk.js",
-    "static/js/309.a92f9b37.chunk.js": "/challenge-trinca/static/js/309.a92f9b37.chunk.js",
-    "static/js/597.16a09f4a.chunk.js": "/challenge-trinca/static/js/597.16a09f4a.chunk.js",
-    "static/media/bbqpattern.svg": "/challenge-trinca/static/media/bbqpattern.8377c84f1c3616d704e9b14ae3f6a826.svg",
-    "static/media/trincalogo.svg": "/challenge-trinca/static/media/trincalogo.eca4385926c9ffbad86e357b93360c5a.svg",
-    "index.html": "/challenge-trinca/index.html"
+    "main.js": "/challenge-trinca/static/js/main.8f05ea7c.js",
+    "static/js/501.a1c1b6c2.chunk.js": "/challenge-trinca/static/js/501.a1c1b6c2.chunk.js",
+    "static/js/873.f9c8253a.chunk.js": "/challenge-trinca/static/js/873.f9c8253a.chunk.js",
+    "static/js/510.606b329a.chunk.js": "/challenge-trinca/static/js/510.606b329a.chunk.js",
+    "static/js/495.c9be4fba.chunk.js": "/challenge-trinca/static/js/495.c9be4fba.chunk.js",
+    "static/js/950.7c0dd87c.chunk.js": "/challenge-trinca/static/js/950.7c0dd87c.chunk.js",
+    "static/js/462.de4d46d8.chunk.js": "/challenge-trinca/static/js/462.de4d46d8.chunk.js",
+    "static/js/22.6bb501e3.chunk.js": "/challenge-trinca/static/js/22.6bb501e3.chunk.js",
+    "static/media/pattern_bbq.svg": "/challenge-trinca/static/media/pattern_bbq.8377c84f1c3616d704e9b14ae3f6a826.svg",
+    "static/media/icon_bbq.svg": "/challenge-trinca/static/media/icon_bbq.ac5321589dbabb4dacbb33b55fe7c33a.svg",
+    "static/media/icon_guests.svg": "/challenge-trinca/static/media/icon_guests.2feb883be433b54bd9cffdaf4a96a7ba.svg",
+    "static/media/logo_trinca.svg": "/challenge-trinca/static/media/logo_trinca.eca4385926c9ffbad86e357b93360c5a.svg",
+    "static/media/icon_money.svg": "/challenge-trinca/static/media/icon_money.d670e7833fc2133eb1fe969f2cc86e45.svg",
+    "index.html": "/challenge-trinca/index.html",
+    "main.8f05ea7c.js.map": "/challenge-trinca/static/js/main.8f05ea7c.js.map",
+    "501.a1c1b6c2.chunk.js.map": "/challenge-trinca/static/js/501.a1c1b6c2.chunk.js.map",
+    "873.f9c8253a.chunk.js.map": "/challenge-trinca/static/js/873.f9c8253a.chunk.js.map",
+    "510.606b329a.chunk.js.map": "/challenge-trinca/static/js/510.606b329a.chunk.js.map",
+    "495.c9be4fba.chunk.js.map": "/challenge-trinca/static/js/495.c9be4fba.chunk.js.map",
+    "950.7c0dd87c.chunk.js.map": "/challenge-trinca/static/js/950.7c0dd87c.chunk.js.map",
+    "462.de4d46d8.chunk.js.map": "/challenge-trinca/static/js/462.de4d46d8.chunk.js.map",
+    "22.6bb501e3.chunk.js.map": "/challenge-trinca/static/js/22.6bb501e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3ad9ac77.js"
+    "static/js/main.8f05ea7c.js"
   ]
 }

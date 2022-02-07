@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchallenge_trinca=self.webpackChunkchallenge_trinca||[]).push([[597],{592:function(a,c,e){e(313);c.Z=e.p+"static/media/bbqpattern.8377c84f1c3616d704e9b14ae3f6a826.svg"},322:function(a,c,e){e(313);c.Z=e.p+"static/media/trincalogo.eca4385926c9ffbad86e357b93360c5a.svg"}}]);
