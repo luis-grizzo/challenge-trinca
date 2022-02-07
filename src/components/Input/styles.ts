@@ -11,13 +11,14 @@ export const Wrapper = styled.div`
 
     .w__label {
       font-size: 2.1rem;
-      font-weight: 700;
+      font-weight: 500;
     }
 
     .w__input {
       padding: 1.4rem 2rem;
       border-radius: 0.2rem;
       background-color: ${theme.colors.shape};
+      border: 1px solid ${theme.colors.darkShape};
 
       width: 100%;
 
