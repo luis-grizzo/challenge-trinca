@@ -25,6 +25,10 @@ export const Button = styled.button<StyledButtonProps>`
     font-weight: 700;
     color: ${theme.colors.white};
 
+    &:hover {
+      background-color: ${theme.colors.blackHover};
+    }
+
     ${fullWidth && modifiers.fullWidth()}
   `}
 `
