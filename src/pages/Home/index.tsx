@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import Card from 'components/Card'
 import Modal from 'components/Modal'
@@ -10,14 +11,17 @@ import Button from 'components/Button'
 import * as S from './styles'
 
 const Home = (): React.ReactElement => {
+  const navigate = useNavigate()
+
   const [modalIsOpen, setModalIsOpen] = useState(false)
-  const [calendarDate, setCalendarDate] = useState<Date | null>(new Date())
+  const [calendarDate, setCalendarDate] = useState<Date | null>(null)
 
   return (
     <S.Wrapper>
       <div className="w__grid">
         <Card
           mode="display"
+          onClick={() => navigate('/details/1')}
           eventDate={new Date()}
           description="descrição"
           guestsNumber={20}
@@ -37,10 +41,11 @@ const Home = (): React.ReactElement => {
             autoFocus
           />
           <DatePicker
-            selected={calendarDate}
+            value={calendarDate}
             onChange={(date) => setCalendarDate(date)}
+            onClean={() => setCalendarDate(null)}
             label="Selecione uma data"
-            placeholderText="Escolha uma boa data para celebrar!"
+            placeholder="Escolha uma boa data para celebrar!"
           />
           <Textarea
             label="Informações adicionais"

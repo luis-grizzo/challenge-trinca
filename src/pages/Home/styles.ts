@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 4rem;
+    gap: 5rem;
 
     width: 100%;
   }
