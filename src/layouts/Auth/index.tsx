@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import trincalogo from 'assets/trincalogo.svg'
+import logo_trinca from 'assets/logo_trinca.svg'
 
 import * as S from './styles'
 
@@ -13,9 +13,9 @@ const AuthLayout = (): React.ReactElement => {
       <div className="b__page-container">
         <Outlet />
       </div>
-      <div className="b__footer">
-        <img src={trincalogo} alt="Trinca's logo" className="bf__image" />
-      </div>
+      <footer className="b__footer">
+        <img src={logo_trinca} alt="Trinca's logo" className="bf__image" />
+      </footer>
     </S.Body>
   )
 }

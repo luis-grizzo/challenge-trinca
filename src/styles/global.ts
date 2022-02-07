@@ -17,9 +17,11 @@ const GlobalStyle = createGlobalStyle`
         background: ${theme.colors.primary};
       }
     }
+
     html {
       font-size: 62.5%;
     }
+
     body,
     button,
     input {
@@ -28,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 400;
       line-height: 1;
     }
+
     *,
     ::before,
     ::after {
@@ -35,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
       border-style: solid;
       border-color: currentColor;
     }
+
     blockquote,
     dl,
     dd,
@@ -50,6 +54,7 @@ const GlobalStyle = createGlobalStyle`
     pre {
       margin: 0;
     }
+
     h1,
     h2,
     h3,
@@ -59,12 +64,14 @@ const GlobalStyle = createGlobalStyle`
       font-size: inherit;
       font-weight: inherit;
     }
+
     ol,
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
     }
+
     img,
     svg,
     video,
@@ -75,20 +82,41 @@ const GlobalStyle = createGlobalStyle`
     object {
       display: block;
     }
+
+    input,
+    textarea {
+      cursor: text;
+    }
+
     button {
       cursor: pointer;
     }
-    button:focus {
-      outline: 1px dotted;
-      outline: 5px auto -webkit-focus-ring-color;
+
+    button,
+    input,
+    textarea {
+      transition: ${theme.transitions.default};
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.3rem ${theme.colors.blackHover};
+      }
     }
+
     a {
       text-decoration: none;
     }
+
     body,
     input,
-    button {
+    button,
+    textarea {
       font-family: 'Raleway', sans-serif;
+      font-size: 2rem;
     }
   `}
 `

@@ -10,10 +10,17 @@ export const theme = {
 
     text: '#616161',
     textHover: transparentize(0.3, '#616161'),
+    background: '#fafafa',
     shape: '#ffffff',
-    background: '#fafafa'
+    darkShape: '#f1f1f1'
   },
   transitions: {
     default: 'all 300ms ease'
+  },
+  shadows: {
+    default: `0px 0px 16px 0px ${transparentize(0.94, '#000000')}`
+  },
+  mediaquerys: {
+    laptopStart: 1024
   }
 } as const

@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 
 import { ButtonProps } from '.'
 
-type StyledButtonProps = Pick<ButtonProps, 'fullWidth'>
+type StyledButtonProps = Pick<ButtonProps, 'fullWidth' | 'variant'>
 
 const modifiers = {
   fullWidth: () => css`
@@ -10,21 +10,38 @@ const modifiers = {
   `
 }
 
+const variants = {
+  default: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.black};
+    color: ${theme.colors.white};
+    padding: 1.4rem 1.8rem;
+
+    &:hover {
+      background-color: ${theme.colors.blackHover};
+    }
+  `,
+  ghost: (theme: DefaultTheme) => css`
+    background-color: transparent;
+    color: ${theme.colors.text};
+    padding: 1rem;
+
+    &:hover {
+      color: ${theme.colors.textHover};
+    }
+  `
+}
+
 export const Button = styled.button<StyledButtonProps>`
-  ${({ theme, fullWidth }) => css`
+  ${({ theme, fullWidth, variant }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 1.4rem 1.8rem;
-    border-radius: 1.8rem;
-
-    background-color: ${theme.colors.black};
-
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: ${theme.colors.white};
+    border-radius: 0.2rem;
 
     ${fullWidth && modifiers.fullWidth()}
+    ${variant && variants[variant](theme)}
   `}
 `

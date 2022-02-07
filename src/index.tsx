@@ -9,12 +9,12 @@ import { theme } from './styles/theme'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <BrowserRouter basename="/challenge-trinca">
         <Routes />
-      </ThemeProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
