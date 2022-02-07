@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
-import trincalogo from 'assets/trincalogo.svg'
+import logo_trinca from 'assets/logo_trinca.svg'
 
 import * as S from './styles'
 
@@ -14,7 +14,7 @@ const DefaultLayout = (): React.ReactElement => {
         <Outlet />
       </div>
       <footer className="b__footer">
-        <img src={trincalogo} alt="Trinca's logo" className="bf__image" />
+        <img src={logo_trinca} alt="Trinca's logo" className="bf__image" />
       </footer>
     </S.Body>
   )
