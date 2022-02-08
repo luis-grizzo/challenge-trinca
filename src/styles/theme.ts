@@ -1,15 +1,15 @@
-import { transparentize } from 'polished'
+import { darken, lighten, transparentize } from 'polished'
 
 export const theme = {
   colors: {
     primary: '#ffd836',
-    primaryHover: transparentize(0.3, '#ffd836'),
+    primaryHover: darken(0.3, '#ffd836'),
     white: '#ffffff',
     black: '#212121',
-    blackHover: transparentize(0.3, '#212121'),
+    blackHover: lighten(0.1, '#212121'),
 
     text: '#616161',
-    textHover: transparentize(0.3, '#616161'),
+    textHover: darken(0.3, '#616161'),
     background: '#fafafa',
     shape: '#ffffff',
     darkShape: '#f1f1f1'
