@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { MdCheck, MdAdd, MdLogout } from 'react-icons/md'
 
 import Card from 'components/Card'
 import Modal from 'components/Modal'
@@ -18,6 +19,16 @@ const Home = (): React.ReactElement => {
 
   return (
     <S.Wrapper>
+      <div className="w__controls">
+        <Button icon={<MdLogout />} onClick={() => navigate('/')}>
+          Sair
+        </Button>
+
+        <Button icon={<MdAdd />} onClick={() => setModalIsOpen(true)}>
+          Adicionar Churras
+        </Button>
+      </div>
+
       <div className="w__grid">
         <Card
           mode="display"
@@ -51,7 +62,9 @@ const Home = (): React.ReactElement => {
             label="Informações adicionais"
             placeholder="O que o pessoal não pode esquecer?"
           />
-          <Button fullWidth>Adicionar</Button>
+          <Button fullWidth icon={<MdCheck />}>
+            Adicionar
+          </Button>
         </form>
       </Modal>
     </S.Wrapper>

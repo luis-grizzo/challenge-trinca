@@ -83,11 +83,12 @@ const GlobalStyle = createGlobalStyle`
       display: block;
     }
 
-    input,
+    input[type='text'],
     textarea {
       cursor: text;
     }
 
+    input[type='checkbox'],
     button {
       cursor: pointer;
     }
