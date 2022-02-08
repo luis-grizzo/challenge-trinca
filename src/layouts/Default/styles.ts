@@ -6,7 +6,7 @@ export const Body = styled.main`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40vh 1fr auto;
+    grid-template-rows: 50vh 1fr auto;
     gap: 4rem;
 
     min-height: 100vh;
@@ -24,12 +24,13 @@ export const Body = styled.main`
       background-color: ${theme.colors.primary};
       background-image: url(${pattern_bbq});
       background-size: cover;
+      box-shadow: inset ${theme.shadows.default};
 
       .bh__title {
         font-size: 3.2rem;
         font-weight: 800;
 
-        margin-top: -8rem;
+        margin-top: -12rem;
       }
     }
 
@@ -38,7 +39,7 @@ export const Body = styled.main`
       max-width: 1280px;
       margin: 0 auto;
 
-      margin-top: calc(-4rem - 8rem);
+      margin-top: calc(-4rem - 12rem);
     }
 
     .b__footer {
