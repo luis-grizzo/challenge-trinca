@@ -1,8 +1,10 @@
 import { createContext, useContext } from 'react'
 
+import { ILogin } from 'shared/types'
+
 type UseAuthData = {
   isLogged: boolean
-  login: () => void
+  login: (login: ILogin) => void
   logout: () => void
 }
 

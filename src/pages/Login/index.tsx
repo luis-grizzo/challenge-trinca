@@ -41,8 +41,8 @@ const Login = (): React.ReactElement => {
   })
 
   const onLoginSubmit: SubmitHandler<LoginInputs> = ({ email, password }) => {
-    const response = validateLoginInStorage(email, password)
-    response && login()
+    const authenticated = validateLoginInStorage(email, password)
+    !!authenticated && login(authenticated)
   }
 
   const onRegisterSubmit: SubmitHandler<RegisterInputs> = ({
