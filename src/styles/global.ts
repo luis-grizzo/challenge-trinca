@@ -10,11 +10,11 @@ const GlobalStyle = createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
       ::-moz-selection {
         color: ${theme.colors.white};
-        background: ${theme.colors.primary};
+        background: ${theme.colors.black};
       }
       ::selection {
         color: ${theme.colors.white};
-        background: ${theme.colors.primary};
+        background: ${theme.colors.black};
       }
     }
 
