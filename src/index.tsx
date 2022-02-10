@@ -2,6 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.min.css'
+
+import { AuthProvider } from 'shared/hooks/auth/auth-provider'
 
 import Routes from './routes'
 import GlobalStyles from './styles/global'
@@ -11,9 +16,12 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <BrowserRouter basename="/challenge-trinca">
-        <Routes />
-      </BrowserRouter>
+      <ToastContainer />
+      <AuthProvider>
+        <BrowserRouter basename="/challenge-trinca">
+          <Routes />
+        </BrowserRouter>
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

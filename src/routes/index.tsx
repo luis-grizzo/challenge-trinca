@@ -1,12 +1,14 @@
 import { useRoutes } from 'react-router-dom'
 
+import { useAuth } from 'shared/hooks/auth/use-auth'
+
 import { protectedRoutes } from './protected'
 import { publicRoutes } from './public'
 
 const AppRoutes = (): React.ReactElement => {
-  const auth = false
+  const { isLogged } = useAuth()
 
-  const routes = auth ? protectedRoutes : publicRoutes
+  const routes = isLogged ? protectedRoutes : publicRoutes
 
   const element = useRoutes(routes)
 
