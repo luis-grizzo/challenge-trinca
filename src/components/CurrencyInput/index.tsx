@@ -13,7 +13,7 @@ type CurrencyInputProps = {
 
 import * as S from './styles'
 
-const CurrencyInput = forwardRef<HTMLInputElement, CurrencyInputProps>(
+export const CurrencyInput = forwardRef<HTMLInputElement, CurrencyInputProps>(
   ({ label, onChange, ...props }, ref): React.ReactElement => {
     const linkInputLabel = label.replace(/\W/g, '').toLowerCase()
 
@@ -41,5 +41,3 @@ const CurrencyInput = forwardRef<HTMLInputElement, CurrencyInputProps>(
     )
   }
 )
-
-export default CurrencyInput

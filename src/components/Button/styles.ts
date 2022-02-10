@@ -22,11 +22,11 @@ const variants = {
   `,
   ghost: (theme: DefaultTheme) => css`
     background-color: transparent;
-    color: ${theme.colors.text};
+    color: ${theme.colors.black};
     padding: 1rem;
 
     &:hover {
-      color: ${theme.colors.textHover};
+      color: ${theme.colors.blackHover};
     }
   `
 }

@@ -14,7 +14,7 @@ type DatePickerProps = {
 } & RMDatePickerPops &
   Omit<RMDPCalendarProps, 'onChange'>
 
-const DatePicker = ({
+export const DatePicker = ({
   label,
   value,
   onChange,
@@ -47,5 +47,3 @@ const DatePicker = ({
     </S.Wrapper>
   )
 }
-
-export default DatePicker

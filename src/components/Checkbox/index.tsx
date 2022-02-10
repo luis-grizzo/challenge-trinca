@@ -7,7 +7,7 @@ type CheckboxProps = {
   wrapperClassName?: string
 } & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'className'>
 
-const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ label, wrapperClassName, ...props }, ref): React.ReactElement => {
     const linkInputLabel = label.replace(/\W/g, '').toLowerCase()
 
@@ -27,5 +27,3 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     )
   }
 )
-
-export default Checkbox

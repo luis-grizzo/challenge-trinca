@@ -17,7 +17,7 @@ export type CardProps = {
   data?: IEvent
 } & React.HTMLAttributes<HTMLDivElement>
 
-const Card = ({
+export const Card = ({
   type = 'display',
   data,
   ...props
@@ -55,5 +55,3 @@ const Card = ({
     </S.Card>
   )
 }
-
-export default Card

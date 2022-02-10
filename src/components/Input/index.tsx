@@ -6,7 +6,7 @@ type InputProps = {
   label: string
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, ...props }, ref): React.ReactElement => {
     const linkInputLabel = label.replace(/\W/g, '').toLowerCase()
 
@@ -20,5 +20,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     )
   }
 )
-
-export default Input

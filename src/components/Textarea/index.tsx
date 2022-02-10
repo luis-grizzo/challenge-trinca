@@ -6,7 +6,7 @@ type TextareaProps = {
   label: string
 } & React.TextareaHTMLAttributes<HTMLTextAreaElement>
 
-const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, ...props }, ref): React.ReactElement => {
     const linkTextareaLabel = label.replace(/\W/g, '').toLowerCase()
 
@@ -25,5 +25,3 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     )
   }
 )
-
-export default Textarea
