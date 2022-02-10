@@ -1,12 +1,12 @@
 import { MdLocalDrink } from 'react-icons/md'
 
-import { IEvent, IParticipant } from 'shared/types/event'
+import { IEvent, IParticipant } from 'shared/types'
 
-import { updatePartcipant } from 'services/events/updateParticipant'
+import { updatePartcipant } from 'services/events'
 
-import { formatAmount } from 'utils/format-amount'
+import { formatAmount } from 'utils'
 
-import Checkbox from 'components/Checkbox'
+import { Checkbox } from 'components'
 
 import * as S from 'pages/Details/styles'
 

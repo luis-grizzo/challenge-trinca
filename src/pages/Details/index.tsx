@@ -5,18 +5,13 @@ import { format } from 'date-fns'
 import { toast } from 'react-toastify'
 import { MdKeyboardReturn, MdAdd, MdCheck } from 'react-icons/md'
 
-import { IEvent } from 'shared/types/event'
+import { IEvent } from 'shared/types'
 
-import { findEventInStorage } from 'services/events/findEventInStorage'
-import { updateEventInStorage } from 'services/events/updateEventInStorage'
+import { findEventInStorage, updateEventInStorage } from 'services/events'
 
-import { formatAmount } from 'utils/format-amount'
+import { formatAmount } from 'utils'
 
-import Button from 'components/Button'
-import Modal from 'components/Modal'
-import Input from 'components/Input'
-import Checkbox from 'components/Checkbox'
-import CurrencyInput from 'components/CurrencyInput'
+import { Button, Modal, Input, Checkbox, CurrencyInput } from 'components'
 
 import List from './components/List'
 
