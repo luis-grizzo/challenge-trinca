@@ -3,13 +3,11 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { MdCreate } from 'react-icons/md'
 
-import { useAuth } from 'shared/hooks/auth/use-auth'
+import { useAuth } from 'shared/hooks/auth'
 
-import { ILogin } from 'shared/types/login'
+import { validateLoginInStorage, setLoginInStorage } from 'services/logins'
 
-import Input from 'components/Input'
-import Button from 'components/Button'
-import Modal from 'components/Modal'
+import { Input, Button, Modal } from 'components'
 
 import * as S from './styled'
 
@@ -43,48 +41,15 @@ const Login = (): React.ReactElement => {
   })
 
   const onLoginSubmit: SubmitHandler<LoginInputs> = ({ email, password }) => {
-    const logins = localStorage.getItem('logins')
-
-    if (logins) {
-      const loginsArray = JSON.parse(logins) as Array<ILogin>
-
-      loginsArray.filter(
-        (item) => item.email === email && item.password === password
-      ).length > 0
-        ? login()
-        : toast.error('Login não confere.')
-    } else {
-      toast.error('Não há logins cadastrados.')
-    }
+    const response = validateLoginInStorage(email, password)
+    response && login()
   }
 
   const onRegisterSubmit: SubmitHandler<RegisterInputs> = ({
     email,
     password
   }) => {
-    const logins = localStorage.getItem('logins')
-
-    if (logins) {
-      const loginsArray = JSON.parse(logins)
-      const newLoginsArray = [
-        ...loginsArray,
-        {
-          id: `${Math.round(Math.random() * 10000)}`,
-          email,
-          password
-        }
-      ]
-
-      localStorage.setItem('logins', JSON.stringify(newLoginsArray))
-    } else {
-      localStorage.setItem(
-        'logins',
-        JSON.stringify([
-          { id: `${Math.round(Math.random() * 10000)}`, email, password }
-        ])
-      )
-    }
-
+    setLoginInStorage(email, password)
     setModalIsOpen(false)
     toast.success('Login cadastrado com sucesso!')
   }
@@ -93,7 +58,7 @@ const Login = (): React.ReactElement => {
     <S.Wrapper>
       <form
         onSubmit={loginForm.handleSubmit(onLoginSubmit)}
-        className="w__form"
+        className="w__login-form"
       >
         <Controller
           name="email"
@@ -107,6 +72,7 @@ const Login = (): React.ReactElement => {
             />
           )}
         />
+
         <Controller
           name="password"
           control={loginForm.control}
@@ -119,6 +85,7 @@ const Login = (): React.ReactElement => {
             />
           )}
         />
+
         <Button type="submit" fullWidth>
           Entrar
         </Button>
@@ -149,6 +116,7 @@ const Login = (): React.ReactElement => {
               />
             )}
           />
+
           <Controller
             name="password"
             control={registerForm.control}
@@ -161,6 +129,7 @@ const Login = (): React.ReactElement => {
               />
             )}
           />
+
           <Button
             fullWidth
             icon={<MdCreate />}
