@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 
-import { formatAmount } from 'utils/format-amount'
+import { formatAmount } from 'utils'
 
 import { IEvent } from 'shared/types/event'
 

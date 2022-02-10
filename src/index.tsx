@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.min.css'
 
-import { AuthProvider } from 'shared/hooks/auth/auth-provider'
+import { AuthProvider } from 'shared/hooks/auth'
 
 import Routes from './routes'
 import GlobalStyles from './styles/global'
