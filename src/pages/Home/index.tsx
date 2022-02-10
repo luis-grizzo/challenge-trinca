@@ -4,20 +4,14 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { MdCheck, MdLogout } from 'react-icons/md'
 
-import { useAuth } from 'shared/hooks/auth/use-auth'
-import { IEvent } from 'shared/types/event'
+import { useAuth } from 'shared/hooks/auth'
+import { IEvent } from 'shared/types'
 
-import { getParsedStorage } from 'services/events/getParsedStorage'
+import { setStorage, getParsedStorage } from 'services/events'
 
-import Card from 'components/Card'
-import Modal from 'components/Modal'
-import DatePicker from 'components/DatePicker'
-import Input from 'components/Input'
-import Textarea from 'components/Textarea'
-import Button from 'components/Button'
+import { Card, Modal, DatePicker, Input, Textarea, Button } from 'components'
 
 import * as S from './styles'
-import { setStorage } from 'services/events/setStorage'
 
 type RegisterEventInputs = {
   title: string
