@@ -1,6 +1,6 @@
 {
   "name": "challenge-trinca",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "homepage": "https://luis-grizzo.github.io/challenge-trinca/",
   "dependencies": {
@@ -12,12 +12,14 @@
     "polished": "^4.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.26.1",
     "react-icons": "^4.3.1",
     "react-multi-date-picker": "^3.3.0",
     "react-number-format": "^4.9.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-spring": "^9.4.2",
+    "react-toastify": "^8.1.1",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
