@@ -14,33 +14,17 @@ export const Wrapper = styled.div`
       font-weight: 500;
     }
 
-    .w__input-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
+    .w__input {
+      padding: 1.4rem 2rem;
+      border-radius: 0.2rem;
 
       width: 100%;
       border-radius: 0.2rem;
       background-color: ${theme.colors.shape};
       border: 1px solid ${theme.colors.darkShape};
 
-      .wiw__input {
-        padding: 1.4rem 2rem;
-        border-radius: 0.2rem;
-
-        width: 100%;
-
-        &::placeholder {
-          font-style: italic;
-        }
-      }
-
-      .wiw__clear-button {
-        background-color: ${theme.colors.darkShape};
-        border: none;
-        border-radius: 50%;
-        padding: 0.5rem;
-        margin-right: 2rem;
+      &::placeholder {
+        font-style: italic;
       }
     }
 
