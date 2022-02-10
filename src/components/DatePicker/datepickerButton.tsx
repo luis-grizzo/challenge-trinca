@@ -1,6 +1,6 @@
 import { MdArrowLeft, MdArrowRight } from 'react-icons/md'
 
-import Button from 'components/Button'
+import { Button } from 'components/Button'
 
 type ButtonDirections = 'left' | 'right'
 

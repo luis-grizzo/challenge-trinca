@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     }
 
     .w__checkbox:not(:checked) + .w__label::before,
-    .w__checkbox + .w__label::before {
+    .w__checkbox:checked + .w__label::before {
       content: '';
 
       width: 2.5rem;
@@ -25,11 +25,11 @@ export const Wrapper = styled.div`
       cursor: pointer;
     }
 
-    .w__checkbox:not(:checked) + .w__label::before {
+    .w__checkbox:checked + .w__label::before {
       background-color: ${theme.colors.primary};
     }
 
-    .w__checkbox + .w__label::before {
+    .w__checkbox:not(:checked) + .w__label::before {
       background-color: ${theme.colors.darkShape};
     }
 

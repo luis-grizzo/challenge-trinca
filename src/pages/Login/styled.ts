@@ -1,23 +1,21 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  ${({ theme }) => css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+
+  .w__login-form,
+  .wm__register-form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
 
-    .w__form {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 5rem;
+    width: 100%;
+  }
 
-      max-width: 50rem;
-
-      @media only screen and (max-width: ${String(
-          theme.mediaquerys.laptopStart
-        )}) {
-        max-width: unset;
-      }
-    }
-  `}
+  .w__login-form {
+    max-width: 50rem;
+  }
 `

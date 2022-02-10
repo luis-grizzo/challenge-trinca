@@ -1,6 +1,6 @@
 import { renderWithTheme } from 'utils/render-with-theme'
 
-import Checkbox from '..'
+import { Checkbox } from '..'
 
 describe('<Checkbox />', () => {
   it('render Checkbox', () => {

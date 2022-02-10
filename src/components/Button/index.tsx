@@ -8,7 +8,7 @@ export type ButtonProps = {
   icon?: React.ReactNode
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = ({
+export const Button = ({
   fullWidth,
   variant = 'default',
   icon,
@@ -22,5 +22,3 @@ const Button = ({
     </S.Button>
   )
 }
-
-export default Button

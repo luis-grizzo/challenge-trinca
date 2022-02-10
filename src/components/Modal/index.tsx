@@ -9,7 +9,7 @@ type ModalProps = {
   onClose?: () => void
 } & React.HTMLAttributes<HTMLDivElement>
 
-const Modal = ({
+export const Modal = ({
   isOpen,
   modalTitle,
   onClose,
@@ -75,5 +75,3 @@ const Modal = ({
       )
   )
 }
-
-export default Modal
