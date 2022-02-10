@@ -1,10 +1,8 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
-import { CardModes } from '.'
+import { CardProps } from '.'
 
-type StyledCardProps = {
-  mode: CardModes
-}
+type StyledCardProps = Pick<CardProps, 'type'>
 
 const modifiers = {
   display: (theme: DefaultTheme) => css`
@@ -44,7 +42,7 @@ const modifiers = {
       justify-content: flex-end;
     }
   `,
-  link: (theme: DefaultTheme) => css`
+  create: (theme: DefaultTheme) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,12 +71,12 @@ const modifiers = {
 }
 
 export const Card = styled.div<StyledCardProps>`
-  ${({ theme, mode }) => css`
+  ${({ theme, type }) => css`
     padding: 2rem 2.5rem;
     border-radius: 0.2rem;
     box-shadow: ${theme.shadows.default};
     cursor: pointer;
 
-    ${modifiers[mode](theme)}
+    ${type && modifiers[type](theme)}
   `}
 `

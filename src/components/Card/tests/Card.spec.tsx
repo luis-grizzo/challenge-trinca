@@ -4,6 +4,6 @@ import Card from '..'
 
 describe('<Card />', () => {
   it('render Card', () => {
-    renderWithTheme(<Card mode="display" />)
+    renderWithTheme(<Card />)
   })
 })
