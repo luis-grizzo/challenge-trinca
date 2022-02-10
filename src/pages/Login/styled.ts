@@ -3,14 +3,16 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
 
     .w__form {
-      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 5rem;
 
+      width: 100%;
       max-width: 50rem;
 
       @media only screen and (max-width: ${String(
@@ -18,6 +20,15 @@ export const Wrapper = styled.div`
         )}) {
         max-width: unset;
       }
+    }
+
+    .wm__register-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5rem;
+
+      width: 100%;
     }
   `}
 `
