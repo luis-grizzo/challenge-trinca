@@ -1,6 +1,6 @@
 import { renderWithTheme } from 'utils/render-with-theme'
 
-import CurrencyInput from '..'
+import { CurrencyInput } from '..'
 
 describe('<CurrencyInput />', () => {
   it('render CurrencyInput', () => {

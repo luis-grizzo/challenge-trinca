@@ -1,6 +1,6 @@
 import { renderWithTheme } from 'utils/render-with-theme'
 
-import DatePicker from '..'
+import { DatePicker } from '..'
 
 describe('<DatePicker />', () => {
   it('render DatePicker', () => {

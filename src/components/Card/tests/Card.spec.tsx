@@ -1,6 +1,6 @@
 import { renderWithTheme } from 'utils/render-with-theme'
 
-import Card from '..'
+import { Card } from '..'
 
 describe('<Card />', () => {
   it('render Card', () => {

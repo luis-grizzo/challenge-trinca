@@ -1,6 +1,6 @@
 import { renderWithTheme } from 'utils/render-with-theme'
 
-import Modal from '..'
+import { Modal } from '..'
 
 describe('<Modal />', () => {
   it('render Modal', () => {

@@ -1,6 +1,6 @@
 import { renderWithTheme } from 'utils/render-with-theme'
 
-import Textarea from '..'
+import { Textarea } from '..'
 
 describe('<Textarea />', () => {
   it('render Textarea', () => {
