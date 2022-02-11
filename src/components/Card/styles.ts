@@ -47,7 +47,7 @@ const modifiers = {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 1rem;
 
     background-color: ${theme.colors.darkShape};
 
@@ -72,6 +72,7 @@ const modifiers = {
 
 export const Card = styled.div<StyledCardProps>`
   ${({ theme, type }) => css`
+    min-height: 21rem;
     padding: 2rem 2.5rem;
     border-radius: 0.2rem;
     box-shadow: ${theme.shadows.default};

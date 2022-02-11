@@ -1,9 +1,7 @@
 import { format } from 'date-fns'
 
-import { formatAmount } from 'utils'
-
 import { IEvent } from 'shared/types/event'
-
+import { formatAmount } from 'shared/utils'
 import icon_guests from 'assets/icon_guests.svg'
 import icon_money from 'assets/icon_money.svg'
 import icon_bbq from 'assets/icon_bbq.svg'
