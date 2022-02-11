@@ -1,5 +1,4 @@
 export * from './Button'
-export * from './Card'
 export * from './Checkbox'
 export * from './CurrencyInput'
 export * from './DatePicker'
