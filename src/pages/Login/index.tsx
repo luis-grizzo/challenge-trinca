@@ -1,22 +1,19 @@
-import { useState } from 'react'
-import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import { MdCreate } from 'react-icons/md'
 
-import { useAuth } from 'shared/hooks/auth'
-
 import { validateLoginInStorage, setLoginInStorage } from 'services/logins'
-
+import { useAuth } from 'shared/hooks/auth'
 import { Input, Button, Modal } from 'components'
 
 import * as S from './styled'
 
-type LoginInputs = {
+interface ILoginInputs {
   email: string
   password: string
 }
 
-type RegisterInputs = {
+interface IRegisterInputs {
   email: string
   password: string
 }
@@ -25,68 +22,79 @@ const Login = (): React.ReactElement => {
   const { login } = useAuth()
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
-
-  const registerForm = useForm<RegisterInputs>({
-    defaultValues: {
-      email: '',
-      password: ''
-    }
+  const [loginForm, setLoginForm] = useState<ILoginInputs>({
+    email: '',
+    password: ''
+  })
+  const [registerForm, setRegisterForm] = useState<IRegisterInputs>({
+    email: '',
+    password: ''
   })
 
-  const loginForm = useForm<LoginInputs>({
-    defaultValues: {
-      email: '',
-      password: ''
-    }
-  })
+  const onLoginSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
 
-  const onLoginSubmit: SubmitHandler<LoginInputs> = ({ email, password }) => {
+    const { email, password } = loginForm
+
     const authenticated = validateLoginInStorage(email, password)
-    !!authenticated && login(authenticated)
+
+    if (authenticated) {
+      login(authenticated)
+      setLoginForm({
+        email: '',
+        password: ''
+      })
+    }
   }
 
-  const onRegisterSubmit: SubmitHandler<RegisterInputs> = ({
-    email,
-    password
-  }) => {
+  const onRegisterSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+
+    const { email, password } = registerForm
+
     setLoginInStorage(email, password)
+
     setModalIsOpen(false)
+    setRegisterForm({
+      email: '',
+      password: ''
+    })
+
     toast.success('Login cadastrado com sucesso!')
   }
 
   return (
     <S.Wrapper>
-      <form
-        onSubmit={loginForm.handleSubmit(onLoginSubmit)}
-        className="w__login-form"
-      >
-        <Controller
-          name="email"
-          control={loginForm.control}
-          render={({ field }) => (
-            <Input
-              label="E-mail"
-              type="email"
-              placeholder="exemplo@exemplo.com"
-              {...field}
-            />
-          )}
+      <form onSubmit={onLoginSubmit} className="w__login-form">
+        <Input
+          value={loginForm.email}
+          onChange={(event) =>
+            setLoginForm((prevValue) => ({
+              ...prevValue,
+              email: event.target.value
+            }))
+          }
+          label="E-mail"
+          type="email"
+          placeholder="exemplo@exemplo.com"
+          autoFocus
         />
 
-        <Controller
+        <Input
+          value={loginForm.password}
+          onChange={(event) =>
+            setLoginForm((prevValue) => ({
+              ...prevValue,
+              password: event.target.value
+            }))
+          }
           name="password"
-          control={loginForm.control}
-          render={({ field }) => (
-            <Input
-              label="Senha"
-              type="password"
-              placeholder="Sua senha"
-              {...field}
-            />
-          )}
+          label="Senha"
+          type="password"
+          placeholder="Sua senha"
         />
 
-        <Button type="submit" fullWidth>
+        <Button variant="default" type="submit" fullWidth>
           Entrar
         </Button>
       </form>
@@ -97,46 +105,45 @@ const Login = (): React.ReactElement => {
 
       <Modal
         isOpen={modalIsOpen}
-        modalTitle="Cadastro"
+        modalTitle="Adicionar Conta"
         onClose={() => setModalIsOpen(false)}
       >
-        <form
-          onSubmit={registerForm.handleSubmit(onRegisterSubmit)}
-          className="wm__register-form"
-        >
-          <Controller
-            name="email"
-            control={registerForm.control}
-            render={({ field }) => (
-              <Input
-                label="E-mail"
-                type="email"
-                placeholder="exemplo@exemplo.com"
-                {...field}
-              />
-            )}
+        <form onSubmit={onRegisterSubmit} className="wm__register-form">
+          <Input
+            value={registerForm.email}
+            onChange={(event) =>
+              setRegisterForm((prevValue) => ({
+                ...prevValue,
+                email: event.target.value
+              }))
+            }
+            label="E-mail"
+            type="email"
+            placeholder="Seu email, tipo: exemplo@exemplo.com"
+            autoFocus
           />
 
-          <Controller
-            name="password"
-            control={registerForm.control}
-            render={({ field }) => (
-              <Input
-                label="Senha"
-                type="password"
-                placeholder="Sua senha"
-                {...field}
-              />
-            )}
+          <Input
+            value={registerForm.password}
+            onChange={(event) =>
+              setRegisterForm((prevValue) => ({
+                ...prevValue,
+                password: event.target.value
+              }))
+            }
+            label="Senha"
+            type="password"
+            placeholder="Sua senha secreta ;)"
           />
 
           <Button
+            variant="default"
             fullWidth
             icon={<MdCreate />}
             type="submit"
-            disabled={!registerForm.formState.isDirty}
+            disabled={!registerForm.email || !registerForm.password}
           >
-            Criar Conta
+            Adicionar
           </Button>
         </form>
       </Modal>
