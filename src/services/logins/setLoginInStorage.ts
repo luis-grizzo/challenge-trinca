@@ -1,6 +1,5 @@
-import { ILogin } from 'shared/types/login'
-
-import { generateId } from 'utils/generate-id'
+import { ILogin } from 'shared/types'
+import { generateId } from 'shared/utils'
 
 import { getParsedLoginsStorage } from './getParsedLoginsStorage'
 
