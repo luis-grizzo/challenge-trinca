@@ -1,16 +1,17 @@
-import { IEvent } from 'shared/types/event'
+import { IEvent } from 'shared/types'
 
-import { getParsedStorage } from './getParsedStorage'
-import { setStorage } from './setStorage'
+import { getParsedEventsStorage } from '.'
 
-export const updateEventInStorage = (event: IEvent) => {
-  const parsedStorage = getParsedStorage()
+export const updateEventInStorage = (newEvent: IEvent) => {
+  const parsedStorage = getParsedEventsStorage()
 
-  const finalStorage = parsedStorage.map((item) => {
-    if (item.id === event.id) return { ...event }
+  const newStorage = parsedStorage.map((event) => {
+    if (event.id === newEvent.id) return { ...newEvent }
 
-    return item
+    return event
   })
 
-  setStorage(finalStorage)
+  localStorage.setItem('@churras-trinca/events', JSON.stringify(newStorage))
+
+  return newStorage
 }

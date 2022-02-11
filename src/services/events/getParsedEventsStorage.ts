@@ -1,6 +1,6 @@
 import { IEvent } from 'shared/types/event'
 
-export const getParsedStorage = (): IEvent[] => {
+export const getParsedEventsStorage = (): IEvent[] => {
   !localStorage.getItem('@churras-trinca/events') &&
     localStorage.setItem('@churras-trinca/events', JSON.stringify([]))
 
