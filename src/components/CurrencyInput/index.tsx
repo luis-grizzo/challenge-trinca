@@ -1,43 +1,49 @@
-import { forwardRef } from 'react'
-
 import CurrencyiInput, {
   NumberFormatProps as RNFCurrencyiInputProps
 } from 'react-number-format'
 
-import { formatAmount } from 'utils/format-amount'
+import { formatAmount } from 'shared/utils'
 
 type CurrencyInputProps = {
   label: string
-  onChange?: (value: string) => void
+  onChange?: (value: number) => void
 } & Omit<RNFCurrencyiInputProps, 'onChange'>
 
 import * as S from './styles'
 
-export const CurrencyInput = forwardRef<HTMLInputElement, CurrencyInputProps>(
-  ({ label, onChange, ...props }, ref): React.ReactElement => {
-    const linkInputLabel = label.replace(/\W/g, '').toLowerCase()
+export const CurrencyInput = ({
+  label,
+  onChange,
+  ...props
+}: CurrencyInputProps): React.ReactElement => {
+  const linkInputLabel = label.replace(/\W/g, '').toLowerCase()
 
-    return (
-      <S.Wrapper>
-        <label htmlFor={linkInputLabel} className="w__label">
-          {label}
-        </label>
-        <CurrencyiInput
-          getInputRef={ref}
-          id={linkInputLabel}
-          isNumericString
-          allowNegative={false}
-          allowLeadingZeros={false}
-          format={(value) => formatAmount(parseInt(value) / 100)}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            onChange?.(
-              event.target.value.replace(/[R$.]/g, '').replace(/,/g, '.')
-            )
-          }
-          className="w__input"
-          {...props}
-        />
-      </S.Wrapper>
-    )
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value =
+      e.target.value.replace(/[-R$.,]/g, '') === ''
+        ? 0
+        : parseInt(e.target.value.replace(/[-R$.,]/g, ''))
+
+    return onChange?.(value)
   }
-)
+
+  return (
+    <S.Wrapper>
+      <label htmlFor={linkInputLabel} className="w__label">
+        {label}
+      </label>
+      <CurrencyiInput
+        type="tel"
+        id={linkInputLabel}
+        defaultValue={0}
+        isNumericString
+        allowNegative={false}
+        allowLeadingZeros={false}
+        format={(value) => formatAmount(parseInt(value) / 100)}
+        onChange={handleOnChange}
+        className="w__input"
+        {...props}
+      />
+    </S.Wrapper>
+  )
+}
