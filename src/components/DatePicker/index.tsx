@@ -28,6 +28,7 @@ export const DatePicker = ({
         {label}
       </label>
       <RMDatePicker
+        title="Selecione uma data"
         id={linkInputLabel}
         value={value}
         onChange={(date: DateObject) =>
