@@ -16,7 +16,7 @@ const variants = {
     color: ${theme.colors.white};
     padding: 1.4rem 1.6rem;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: ${theme.colors.blackHover};
     }
   `,
@@ -25,8 +25,20 @@ const variants = {
     color: ${theme.colors.black};
     padding: 1rem;
 
-    &:hover {
+    &:hover:not(:disabled) {
       color: ${theme.colors.blackHover};
+    }
+  `,
+  outlined: (theme: DefaultTheme) => css`
+    background-color: transparent;
+    color: ${theme.colors.black};
+    border: 0.2rem solid ${theme.colors.black};
+    padding: 1.4rem 1.6rem;
+    backdrop-filter: blur(0.4rem);
+
+    &:hover:not(:disabled) {
+      color: ${theme.colors.blackHover};
+      border-color: ${theme.colors.blackHover};
     }
   `
 }
@@ -41,6 +53,18 @@ export const Button = styled.button<StyledButtonProps>`
     font-size: 1.8rem;
     font-weight: 700;
     border-radius: 0.2rem;
+    transition: ${theme.transitions.default};
+
+    &:disabled {
+      background-color: ${theme.colors.disabled};
+      color: ${theme.colors.darkDisabled};
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.3rem ${theme.colors.blackHover};
+    }
 
     ${fullWidth && modifiers.fullWidth()}
     ${variant && variants[variant](theme)}

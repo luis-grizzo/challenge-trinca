@@ -1,11 +1,11 @@
 import { IEvent } from 'shared/types/event'
 
-import { getParsedStorage } from './getParsedStorage'
+import { getParsedEventsStorage } from './getParsedEventsStorage'
 
-export const findEventInStorage = (id: number): IEvent => {
-  const parsedStorage = getParsedStorage()
+export const findEventInStorage = (eventId: number): IEvent => {
+  const parsedStorage = getParsedEventsStorage()
 
-  const filter = parsedStorage.filter((item: IEvent) => item.id === id)
+  const filter = parsedStorage.filter((event: IEvent) => event.id === eventId)
 
   return filter[0]
 }

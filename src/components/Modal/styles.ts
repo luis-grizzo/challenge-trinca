@@ -19,12 +19,14 @@ export const Modal = styled.div`
       align-items: flex-start;
       gap: 5rem;
 
+      max-height: 90vh;
       width: 90vw;
       max-width: 720px;
 
       padding: 5rem;
       background-color: ${theme.colors.background};
       box-shadow: ${theme.shadows.default};
+      overflow: auto;
       z-index: 20;
 
       .mc__header {
@@ -58,6 +60,7 @@ export const Modal = styled.div`
       width: 100vw;
 
       backdrop-filter: blur(2px);
+      background-color: ${theme.colors.opaqueBackground};
       cursor: pointer;
       z-index: 10;
     }

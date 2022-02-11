@@ -93,21 +93,6 @@ const GlobalStyle = createGlobalStyle`
       cursor: pointer;
     }
 
-    button,
-    input,
-    textarea {
-      transition: ${theme.transitions.default};
-
-      &:disabled {
-        cursor: not-allowed;
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 0.3rem ${theme.colors.blackHover};
-      }
-    }
-
     a {
       text-decoration: none;
     }

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useTransition, animated } from 'react-spring'
 import { MdClose } from 'react-icons/md'
 
@@ -38,10 +39,16 @@ export const Modal = ({
     reverse: isOpen
   })
 
+  useEffect(() => {
+    isOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto')
+  }, [isOpen])
+
   return wrapperTrasition(
     (style, item) =>
       item && (
-        <AnimatedModal styles={style}>
+        <AnimatedModal role="modal" styles={style}>
           {contentTransition(
             (style, item) =>
               item && (
@@ -51,6 +58,7 @@ export const Modal = ({
                       <span className="mch__title">{modalTitle}</span>
                     )}
                     <button
+                      title="Fechar"
                       onClick={() => onClose?.()}
                       className="mch__close-button"
                     >
@@ -65,6 +73,7 @@ export const Modal = ({
             (style, item) =>
               item && (
                 <animated.div
+                  role="overlay"
                   style={style}
                   onClick={() => onClose?.()}
                   className="m__overlay"

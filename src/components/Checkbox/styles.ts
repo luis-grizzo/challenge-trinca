@@ -3,15 +3,20 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.6rem;
 
-    width: 100%;
+    height: 5.3rem;
 
     .w__checkbox {
       position: absolute;
       opacity: 0;
       visibility: hidden;
+    }
+
+    .w__checkbox + .w__label,
+    .w__checkbox + .w__label::before {
+      cursor: pointer;
     }
 
     .w__checkbox:not(:checked) + .w__label::before,
@@ -22,7 +27,6 @@ export const Wrapper = styled.div`
       aspect-ratio: 1/1;
       border-radius: 50%;
       transition: ${theme.transitions.default};
-      cursor: pointer;
     }
 
     .w__checkbox:checked + .w__label::before {

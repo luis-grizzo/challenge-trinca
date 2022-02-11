@@ -1,18 +1,16 @@
 {
   "name": "challenge-trinca",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "homepage": "https://luis-grizzo.github.io/challenge-trinca/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/react-datepicker": "^4.3.4",
     "date-fns": "^2.28.0",
     "polished": "^4.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.26.1",
     "react-icons": "^4.3.1",
     "react-multi-date-picker": "^3.3.0",
     "react-number-format": "^4.9.1",
@@ -20,6 +18,8 @@
     "react-scripts": "5.0.0",
     "react-spring": "^9.4.2",
     "react-toastify": "^8.1.1",
+    "react-tooltip": "^4.2.21",
+    "sinon": "^13.0.1",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
@@ -28,6 +28,7 @@
     "@types/node": "^16.11.22",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "@types/sinon": "^10.0.11",
     "@types/styled-components": "^5.1.21",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
@@ -69,6 +70,12 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.ts(x)?",
+      "!**/node_modules/**"
     ]
   }
 }

@@ -7,10 +7,15 @@ export const theme = {
     white: '#ffffff',
     black: '#212121',
     blackHover: lighten(0.1, '#212121'),
+    disabled: '#e0e0e0',
+    darkDisabled: darken(0.3, '#e0e0e0'),
 
     text: '#616161',
     textHover: darken(0.3, '#616161'),
+
     background: '#fafafa',
+    opaqueBackground: transparentize(0.7, '#212121'),
+
     shape: '#ffffff',
     darkShape: '#f1f1f1'
   },

@@ -1,16 +1,16 @@
 import * as S from './styles'
 
-export type ButtonVariants = 'default' | 'ghost'
+export type ButtonVariants = 'default' | 'ghost' | 'outlined'
 
 export type ButtonProps = {
   fullWidth?: boolean
-  variant?: ButtonVariants
+  variant: ButtonVariants
   icon?: React.ReactNode
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button = ({
   fullWidth,
-  variant = 'default',
+  variant,
   icon,
   children,
   ...props
