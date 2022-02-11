@@ -1,18 +1,15 @@
-import { MdLocalDrink } from 'react-icons/md'
+import { IoIosBeer } from 'react-icons/io'
 
 import { IEvent, IParticipant } from 'shared/types'
-
-import { updatePartcipant } from 'services/events'
-
-import { formatAmount } from 'utils'
-
+import { updatePartcipantPaidInStorage } from 'services/events'
+import { formatAmount } from 'shared/utils'
 import { Checkbox } from 'components'
 
 import * as S from 'pages/Details/styles'
 
 interface IListProps {
   eventId: number
-  participants?: IParticipant[]
+  participants: IParticipant[]
   onParticipantUpdate: (event: IEvent) => void
 }
 
@@ -23,7 +20,7 @@ const List = ({
 }: IListProps): React.ReactElement => {
   return (
     <S.List>
-      {!participants || participants.length === 0 ? (
+      {participants.length === 0 ? (
         <span>Nenhum participante adicionado ainda :(</span>
       ) : (
         participants.map((participant) => (
@@ -32,10 +29,7 @@ const List = ({
             className={`l__row ${participant.paid ? 'l__row--checked' : ''}`}
             onClick={() => {
               onParticipantUpdate(
-                updatePartcipant(eventId, {
-                  ...participant,
-                  paid: !participant.paid
-                })
+                updatePartcipantPaidInStorage(eventId, participant.id)
               )
             }}
           >
@@ -43,9 +37,17 @@ const List = ({
               <Checkbox
                 label={participant.name}
                 checked={participant.paid}
+                infoIcon={
+                  participant.includeDrink
+                    ? {
+                        icon: <IoIosBeer />,
+                        message: 'Bebida inclusa'
+                      }
+                    : undefined
+                }
                 readOnly
+                labelClassName="lrl__disabled-checkbox"
               />
-              {participant.includeDrink && <MdLocalDrink />}
             </div>
 
             <span className="lr__right">

@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 
     .w__controls {
       display: flex;
@@ -25,11 +25,22 @@ export const Wrapper = styled.div`
       box-shadow: ${theme.shadows.default};
 
       .wp__header {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-auto-rows: auto;
-        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
+
+        .wph__row {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+
+        .wph__column {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
 
         .wph__date {
           font-size: 2.8rem;
@@ -68,8 +79,10 @@ export const Wrapper = styled.div`
       width: 100%;
 
       .wmf__money {
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-auto-rows: 1fr;
+        align-items: flex-end;
         gap: 1rem;
 
         width: 100%;
@@ -90,14 +103,16 @@ export const List = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 2rem;
+      gap: 5rem;
 
       padding: 2rem 1rem;
       border-bottom: 2px solid ${theme.colors.primary};
+      cursor: pointer;
+      overflow-x: auto;
       transition: ${theme.transitions.default};
 
       &:hover {
-        background-color: ${theme.colors.darkShape};
+        background-color: ${theme.colors.background};
       }
 
       &--checked {
@@ -109,7 +124,11 @@ export const List = styled.div`
       .lr__left {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
+
+        .lrl__disabled-checkbox {
+          pointer-events: none;
+        }
       }
 
       .lr__right {
