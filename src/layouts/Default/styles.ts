@@ -10,7 +10,7 @@ export const Body = styled.main`
     gap: 4rem;
 
     min-height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
 
     background-color: ${theme.colors.background};
 
@@ -47,7 +47,8 @@ export const Body = styled.main`
       align-items: center;
       justify-content: center;
 
-      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      overflow: hidden;
 
       .bf__image {
         width: 48px;
